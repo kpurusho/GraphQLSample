@@ -1,0 +1,24 @@
+﻿  type Lot {
+      id: ID,
+      name: String,
+      wafers: [Wafer]
+  }
+  type Wafer {
+      id: ID,
+      name: String,
+      defects: [Defect]
+  }
+  type Defect {
+      id: ID,
+      x: Int,
+      y: Int,
+      classcode: Int,
+      roughcode: Int
+  }
+  type Query {
+      lot: Lot,
+      wafers: [Wafer],
+      wafer(id: ID): Wafer,
+      defects(waferid: ID): [Defect],
+      defect(waferid: ID, id: ID): Defect
+  }
